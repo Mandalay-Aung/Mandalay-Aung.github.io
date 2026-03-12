@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandalay Aung’s Internship Stats</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for brutalist/retro feels -->
+    <link href="https://fonts.googleapis.com/css2?family=Cooper+Hewitt:wght@900&family=Inter:wght@400;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="main-title">MANDALAY AUNG’S<br>INTERNSHIP STATS</h1>
+        </header>
+
+        <section id="rpg-stats">
+            <h2 class="section-title">Character Profile</h2>
+            <div class="stats-container">
+                <div class="profile-img-box">
+                    <!-- Blank border for now -->
+                </div>
+                <div class="stats-bars">
+                    <div class="stat-item">
+                        <div class="stat-label"><span>Total # of Internships Applied to</span> <span>42</span></div>
+                        <div class="stat-bar-outer"><div class="stat-bar-inner applied"></div></div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label"><span># Of Responses</span> <span>12</span></div>
+                        <div class="stat-bar-outer"><div class="stat-bar-inner responses"></div></div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label"><span># Of Rejections</span> <span>18</span></div>
+                        <div class="stat-bar-outer"><div class="stat-bar-inner rejections"></div></div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label"><span># Ghosted by</span> <span>9</span></div>
+                        <div class="stat-bar-outer"><div class="stat-bar-inner ghosted"></div></div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label"><span># Of First Round Interviews</span> <span>3</span></div>
+                        <div class="stat-bar-outer"><div class="stat-bar-inner interviews"></div></div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label"><span># Of Resume Revisions</span> <span>4</span></div>
+                        <div class="stat-bar-outer"><div class="stat-bar-inner revisions"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="applications">
+            <h2 class="section-title">Quest Log: Applications</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Company</th>
+                            <th>Position</th>
+                            <th>Date Applied</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>[Company Name]</td>
+                            <td>[Position Title]</td>
+                            <td>[YYYY-MM-DD]</td>
+                            <td>Pending</td>
+                        </tr>
+                        <tr>
+                            <td>[Company Name]</td>
+                            <td>[Position Title]</td>
+                            <td>[YYYY-MM-DD]</td>
+                            <td>Pending</td>
+                        </tr>
+                        <tr>
+                            <td>[Company Name]</td>
+                            <td>[Position Title]</td>
+                            <td>[YYYY-MM-DD]</td>
+                            <td>Pending</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="resumes">
+            <h2 class="section-title">Item Inventory: Resume Revisions</h2>
+            <div class="resume-list">
+                <div class="resume-card">
+                    <h3>Version 1.0</h3>
+                    <p>Initial Draft - Focus: General Software Engineering</p>
+                    <a href="#" class="btn">View PDF</a>
+                </div>
+                <div class="resume-card">
+                    <h3>Version 2.0</h3>
+                    <p>Backend Focus - Updated Projects</p>
+                    <a href="#" class="btn">View PDF</a>
+                </div>
+                <div class="resume-card">
+                    <h3>Version 3.0</h3>
+                    <p>AI/ML Optimization</p>
+                    <a href="#" class="btn">View PDF</a>
+                </div>
+            </div>
+        </section>
+
+        <footer style="margin-top: var(--space-xl); font-size: 0.8rem; color: var(--color-gray-4);">
+            &copy; 2026 Mandalay Aung. All rights reserved. <br>
+            Brutalist-Retro Design System v1.0
+        </footer>
+    </div>
+</body>
+</html>
