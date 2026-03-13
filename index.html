@@ -1,59 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mandalay Aung - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Mandalay Aung’s Internship Stats</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@400;900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-    <header>
-        <h1>Welcome to Mandalay Aungs Portfolio</h1>
-        <nav>
-            <a href="#about">About</a> | 
-            <a href="#projects">Projects</a> | 
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+    <div class="container">
+        <header>
+            <h1 class="main-title">MANDALAY AUNG’S<br>INTERNSHIP STATS</h1>
+        </header>
 
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p> A student at University of Colorado Boulder. College of Engineering and Applied Sciences Class of 2028 </p>
+        <section id="rpg-stats">
+            <h2 class="section-title">Character Profile</h2>
+            <div class="stats-container">
+                <div class="profile-img-box">
+
+                </div>
+                <div class="stats-bars">
+                    <div class="stat-item">
+                        <div class="stat-label"><span>Total # of Internships Applied to</span> <span>19</span></div>
+                        <div class="stat-bar-outer">
+                            <div class="stat-bar-inner applied"></div>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label"><span># Of Responses</span> <span>4</span></div>
+                        <div class="stat-bar-outer">
+                            <div class="stat-bar-inner responses"></div>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label"><span># Of Rejections</span> <span>4</span></div>
+                        <div class="stat-bar-outer">
+                            <div class="stat-bar-inner rejections"></div>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label"><span># Ghosted by</span> <span>6</span></div>
+                        <div class="stat-bar-outer">
+                            <div class="stat-bar-inner ghosted"></div>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label"><span># Of First Round Interviews</span> <span>1</span></div>
+                        <div class="stat-bar-outer">
+                            <div class="stat-bar-inner interviews"></div>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label"><span># Of Resume Revisions</span> <span>8</span></div>
+                        <div class="stat-bar-outer">
+                            <div class="stat-bar-inner revisions"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <p> BuffFocus - Frontend Developer <br>
-                HackCU12 Hackathon - HackCU CLub & Major League Hackers (MLH) <br>
-                Created a chrome extension that acts as an accountibility partner for when you want to study or work. It tracks your mouse and keyboard
-                 activity, how long you've been on a singular tab, the length of your study session, and if you go to "unproductive" websites and gets
-                 you nack on track. All features are customizable to the user, whether they want to be reminded to get on track every 5 minutes to multiple
-                 hours, its up to the user. The extension is purely client side and is ready to use after download; no server, no API key, its entirely run
-                 locally on Chrome.
-            
-            <p> EDUHouse - Software Lead <br>
-                GEEN1400 SPR25 - First Year Engineering Projects (University of Colorado Boulder) <br>
-                Created a Gamified Dollhouse from scratch using an Arduino <br>
-                Spent the majority of the semester working with a team of varying engineers to solve a sustainability issue within the built enviroment.
-                Through lots of hard work and team collaboration, we achieved the Best in Section award at the 32nd Aunnal IDE Design Expo.</p>
+        <section id="applications">
+            <h2 class="section-title">Quest Log: Applications</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Company</th>
+                            <th>Position</th>
+                            <th>Date Applied</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Viget</td>
+                            <td>Application Developer Intern</td>
+                            <td>2025-12-01</td>
+                            <td>Rejected</td>
+                        </tr>
+                        <tr>
+                            <td>Samuel Engineering Inc.</td>
+                            <td>Samuel Academy Internship Program</td>
+                            <td>2025-12-02</td>
+                            <td>Pending</td>
+                        </tr>
+                        <tr>
+                            <td>Affiliated Engineers, Inc. (AEI)</td>
+                            <td>Electrical Engineer Intern</td>
+                            <td>2025-12-03</td>
+                            <td>Pending</td>
+                        </tr>
+                        <tr>
+                            <td>Rule4</td>
+                            <td>Office Assistant</td>
+                            <td>2025-8-04</td>
+                            <td>Pending</td>
+                        </tr>
+                        <tr>
+                            <td>SEIMENS</td>
+                            <td>Protection & Automation Electrical Engineering Intern</td>
+                            <td>[2026-02-26]</td>
+                            <td>Pending</td>
+                        </tr>
+                        <tr>
+                            <td>SEIMENS</td>
+                            <td>Software Development & Quality Assurance Intern</td>
+                            <td>2026-02-11</td>
+                            <td>Rejected</td>
+                        </tr>
+                        <tr>
+                            <td>Lockheed Martin</td>
+                            <td>Engineering Intern</td>
+                            <td>2026-02-27</td>
+                            <td>Rejected</td>
+                        </tr>
+                        <tr>
+                            <td>Lockheed Martin</td>
+                            <td>Electroncis Engineer Intern</td>
+                            <td>2026-02-26</td>
+                            <td>Rejected</td>
+                        </tr>
+                        <tr>
+                            <td>Lockheed Martin</td>
+                            <td>Systems Engineer Intern</td>
+                            <td>2026-03-12</td>
+                            <td>Pending</td>
+                        </tr>
+                        <tr>
+                            <td>Lockheed Martin</td>
+                            <td>Projects Engineering Intern</td>
+                            <td>2026-03-12</td>
+                            <td>Pending</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
-        <section id="contact">
-            <h2>Contact Information</h2>
-            <p> Mandalay Aung - Electrical and Computer Engineering Student<br>
-                Email: Mandalay.Aung@colorado.edu<br>
-                Personal Email: mandalayaung12@gmail.com <br>
-                Cell: (719) 644 - 9879 <br>
-                Linkedin: https://www.linkedin.com/in/mandalay-aung/
-            </p>
-        </section>  
-    </main>
+        <section id="resumes">
+            <h2 class="section-title">Item Inventory: Resume Revisions</h2>
+            <div class="resume-list">
+                <div class="resume-card">
+                    <h3>Version 1.0</h3>
+                    <p> Fall - 2024</p>
+                    <a href="#" class="btn">View PDF</a>
+                </div>
+                <div class="resume-card">
+                    <h3>Version 2.0</h3>
+                    <p>Spring - 2025</p>
+                    <a href="#" class="btn">View PDF</a>
+                </div>
+                <div class="resume-card">
+                    <h3>Version 3.0</h3>
+                    <p>Fall - 2025</p>
+                    <a href="#" class="btn">View PDF</a>
+                </div>
+            </div>
+        </section>
 
-    <footer>
-        <p>&copy; 2026 Mandalay Aung. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
+        <footer style="margin-top: var(--space-xl); font-size: 0.8rem; color: var(--color-gray-4);">
+            &copy; 2026 Mandalay Aung. All rights reserved. <br>
+        </footer>
+    </div>
 </body>
+
 </html>
