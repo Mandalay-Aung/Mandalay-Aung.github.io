@@ -12,7 +12,15 @@
 </head>
 
 <body>
-    <div class="container">
+    <nav class="sticky-nav">
+        <div class="nav-container">
+            <a href="#rpg-stats" class="nav-btn">Stats</a>
+            <a href="#applications" class="nav-btn">Quests</a>
+            <a href="#resumes" class="nav-btn">Items</a>
+            <a href="#contacts" class="nav-btn">Contact</a>
+        </div>
+    </nav>
+    <div class="container" style="margin-top: calc(var(--space-xl) + 20px);">
         <header>
             <h1 class="main-title">MANDALAY AUNG’S<br>INTERNSHIP STATS</h1>
         </header>
@@ -120,9 +128,26 @@
             </div>
         </section>
 
+        <section id="contacts">
+            <h2 class="section-title">Contact / Socials</h2>
+            <div class="contacts-grid">
+                <div class="contact-card">
+                    <span class="contact-label">Email</span>
+                    <a href="mailto:your.email@example.com" class="contact-value">your.email@example.com</a>
+                </div>
+                <div class="contact-card">
+                    <span class="contact-label">LinkedIn</span>
+                    <a href="https://linkedin.com/in/mandalay-aung" target="_blank" class="contact-value">mandalay-aung</a>
+                </div>
+                <div class="contact-card">
+                    <span class="contact-label">Other Social</span>
+                    <a href="#" class="contact-value">@username</a>
+                </div>
+            </div>
+        </section>
+
         <footer style="margin-top: var(--space-xl); font-size: 0.8rem; color: var(--color-gray-4);">
             &copy; 2026 Mandalay Aung. All rights reserved. <br>
-            Brutalist-Retro Design System v1.0
         </footer>
     </div>
 </body>
