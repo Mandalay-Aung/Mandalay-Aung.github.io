@@ -10,23 +10,58 @@
     --color-highlight: #ffa500;
     --color-text: #141414;
 
-    /* Spacing */
     --space-sm: 8px;
     --space-md: 16px;
     --space-lg: 32px;
     --space-xl: 64px;
-
-    /* Brutalist Effects */
     --border-thick: 4px solid var(--color-border);
     --border-thin: 2px solid var(--color-border);
     --shadow-hard: 8px 8px 0px var(--color-border);
     --shadow-hard-sm: 4px 4px 0px var(--color-border);
+} 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+.sticky-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--color-bg);
+    border-bottom: var(--border-thick);
+    z-index: 2000;
+    padding: var(--space-sm) 0;
+}
+.nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-md);
+    padding: 0 var(--space-lg);
+}
+.nav-btn {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    border: var(--border-thin);
+    background: white;
+    box-shadow: 4px 4px 0px var(--color-border);
+    transition: all 0.1s;
+}
+.nav-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--color-border);
+    background: var(--color-highlight);
 }
 
 body {
@@ -41,8 +76,6 @@ body {
     background-size: 20px 20px;
     position: relative;
 }
-
-/* Texture Overlay */
 body::before {
     content: "";
     position: fixed;
@@ -51,13 +84,10 @@ body::before {
     width: 100%;
     height: 100%;
     background: url('https://www.transparenttextures.com/patterns/p6.png');
-    /* Subtle grain */
     pointer-events: none;
     opacity: 0.15;
     z-index: 1000;
 }
-
-/* CRT Scanlines */
 body::after {
     content: "";
     position: fixed;
@@ -72,7 +102,6 @@ body::after {
     pointer-events: none;
     opacity: 0.1;
 }
-
 h1,
 h2,
 h3 {
@@ -80,18 +109,15 @@ h3 {
     font-weight: 900;
     letter-spacing: -1px;
 }
-
 .container {
     max-width: 1000px;
     margin: 0 auto;
 }
-
 header {
     margin-bottom: var(--space-xl);
     border-bottom: var(--border-thick);
     padding-bottom: var(--space-md);
 }
-
 .main-title {
     font-size: clamp(2rem, 8vw, 5rem);
     background: var(--color-primary);
@@ -100,12 +126,42 @@ header {
     padding: 0 var(--space-md);
     box-shadow: var(--shadow-hard);
 }
+.main-title::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100px;
+    width: 60px;
+    height: 100%;
+    background: linear-gradient(to right,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0) 25%,
+            rgba(255, 255, 255, 0.3) 25%,
+            rgba(255, 255, 255, 0.3) 50%,
+            rgba(255, 255, 255, 0.7) 50%,
+            rgba(255, 255, 255, 0.7) 75%,
+            rgba(255, 255, 255, 0.3) 75%,
+            rgba(255, 255, 255, 0.3) 100%);
+    transform: skewX(-20deg);
+    animation: title-pixel-shine 5s infinite linear;
+}
+@keyframes title-pixel-shine {
+    0% {
+        left: -100px;
+    }
 
-/* Section Styling */
+    10% {
+        left: 100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
 section {
     margin-bottom: var(--space-xl);
 }
-
 .section-title {
     font-size: 1.5rem;
     background: var(--color-highlight);
@@ -115,8 +171,6 @@ section {
     border: var(--border-thin);
     box-shadow: var(--shadow-hard-sm);
 }
-
-/* RPG Stats Section */
 .stats-container {
     display: grid;
     grid-template-columns: 200px 1fr;
@@ -126,7 +180,6 @@ section {
     padding: var(--space-lg);
     box-shadow: var(--shadow-hard);
 }
-
 .profile-img-box {
     width: 180px;
     height: 180px;
@@ -138,11 +191,11 @@ section {
     justify-content: center;
     position: relative;
 }
-
-.profile-img-box::after {
-    content: "PHOTO";
-    font-weight: bold;
-    color: var(--color-gray-4);
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .stats-bars {
@@ -150,13 +203,11 @@ section {
     flex-direction: column;
     gap: 12px;
 }
-
 .stat-item {
     display: flex;
     flex-direction: column;
     gap: 4px;
 }
-
 .stat-label {
     font-weight: bold;
     text-transform: uppercase;
@@ -164,7 +215,6 @@ section {
     display: flex;
     justify-content: space-between;
 }
-
 .stat-bar-outer {
     height: 24px;
     background: #333;
@@ -172,48 +222,39 @@ section {
     position: relative;
     padding: 2px;
 }
-
 .stat-bar-inner {
     height: 100%;
     transition: width 0.5s ease-out;
     box-shadow: inset 0 4px 0 rgba(255, 255, 255, 0.2), inset 0 -4px 0 rgba(0, 0, 0, 0.2);
 }
-
 .stat-bar-inner.applied {
     background: var(--color-primary);
-    width: 80%;
+    width: 100%;
 }
-
 .stat-bar-inner.responses {
     background: var(--color-highlight);
-    width: 40%;
+    width: 57%;
 }
-
 .stat-bar-inner.rejections {
     background: var(--color-gray-3);
-    width: 60%;
+    width: 52%;
 }
-
 .stat-bar-inner.ghosted {
     background: var(--color-gray-1);
-    width: 20%;
+    width: 34%;
 }
-
 .stat-bar-inner.interviews {
     background: #4ecdc4;
-    width: 15%;
+    width: 7%;
 }
-
 .stat-bar-inner.revisions {
     background: #ff6b6b;
-    width: 35%;
+    width: 4%;
 }
 
-/* Tables */
 .table-wrapper {
     overflow-x: auto;
 }
-
 table {
     width: 100%;
     border-collapse: collapse;
@@ -221,7 +262,6 @@ table {
     background: white;
     box-shadow: var(--shadow-hard);
 }
-
 th {
     background: var(--color-border);
     color: white;
@@ -229,23 +269,45 @@ th {
     padding: var(--space-md);
     text-transform: uppercase;
 }
-
 td {
     padding: var(--space-md);
     border-bottom: var(--border-thin);
 }
-
 tr:nth-child(even) {
     background: var(--color-gray-1);
 }
+.table-wrapper {
+    overflow-x: auto;
+    transition: max-height 0.4s ease-in-out;
+}
+.table-wrapper.collapsed {
+    max-height: 440px;
+    overflow-y: hidden;
+}
+.table-fade-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(to bottom, rgba(240, 238, 236, 0), var(--color-bg) 90%);
+    background-image:
+        linear-gradient(to bottom, rgba(240, 238, 236, 0) 10%, var(--color-bg) 95%),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect width="4" height="4" fill="%23f0eeec"/><rect x="4" y="4" width="4" height="4" fill="%23f0eeec"/></svg>');
+    background-size: 100% 100%, 8px 8px;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+.table-wrapper:not(.collapsed)+.table-fade-overlay {
+    opacity: 0;
+}
 
-/* Resume Section */
 .resume-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: var(--space-md);
 }
-
 .resume-card {
     background: white;
     border: var(--border-thin);
@@ -253,16 +315,47 @@ tr:nth-child(even) {
     box-shadow: var(--shadow-hard-sm);
     transition: transform 0.1s;
 }
-
 .resume-card:hover {
     transform: translate(-2px, -2px);
     box-shadow: 6px 6px 0px var(--color-border);
 }
-
 .resume-card h3 {
     margin-bottom: var(--space-sm);
 }
+.inventory-tabs {
+    display: flex;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+}
 
+.tab-btn {
+    background: white;
+    border: var(--border-thin);
+    padding: var(--space-sm) var(--space-md);
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: var(--shadow-hard-sm);
+    transition: all 0.1s;
+    font-family: inherit;
+}
+.tab-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--color-border);
+    background: var(--color-highlight);
+}
+.tab-btn.active {
+    background: var(--color-primary);
+    color: white;
+    transform: translate(2px, 2px);
+    box-shadow: none;
+}
+.tab-content {
+    display: none;
+}
+.tab-content.active-content {
+    display: block;
+}
 .btn {
     display: inline-block;
     background: var(--color-border);
@@ -274,9 +367,108 @@ tr:nth-child(even) {
     border: none;
     cursor: pointer;
 }
-
 .btn:hover {
     background: var(--color-primary);
+}
+
+.contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-md);
+}
+.contact-card {
+    background: white;
+    border: var(--border-thick);
+    padding: var(--space-md);
+    box-shadow: var(--shadow-hard-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.contact-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: var(--color-primary);
+}
+.contact-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    text-decoration: none;
+    word-break: break-all;
+}
+.contact-value:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+.quest-row.accepted-row td {
+    font-weight: bold;
+}
+.quest-row.accepted-row td:last-child {
+    color: #0ba409 !important;
+}
+
+.power-up-cell {
+    position: relative;
+    overflow: visible;
+}
+.power-up-plus {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    line-height: 0;
+}
+@keyframes float-up-1 {
+    0% {
+        transform: translate(0, 10px) scale(0.6);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-8px, -28px) scale(1.1);
+        opacity: 0;
+    }
+}
+@keyframes float-up-2 {
+    0% {
+        transform: translate(0, 10px) scale(0.6);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(12px, -36px) scale(0.9);
+        opacity: 0;
+    }
+}
+@keyframes float-up-3 {
+    0% {
+        transform: translate(0, 10px) scale(0.6);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-4px, -45px) scale(1.3);
+        opacity: 0;
+    }
+}
+.power-up-plus.p1 {
+    left: 75px;
+    animation: float-up-1 2.2s infinite 0s;
+}
+.power-up-plus.p2 {
+    left: 88px;
+    animation: float-up-2 2.2s infinite 0.7s;
+}
+.power-up-plus.p3 {
+    left: 102px;
+    animation: float-up-3 2.2s infinite 1.4s;
 }
 
 @media (max-width: 768px) {
