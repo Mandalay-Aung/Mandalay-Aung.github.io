@@ -125,6 +125,8 @@ header {
     display: inline-block;
     padding: 0 var(--space-md);
     box-shadow: var(--shadow-hard);
+    position: relative;
+    overflow: hidden;
 }
 .main-title::after {
     content: '';
@@ -236,7 +238,7 @@ section {
     width: 57%;
 }
 .stat-bar-inner.rejections {
-    background: var(--color-gray-3);
+    background: #d63939;
     width: 52%;
 }
 .stat-bar-inner.ghosted {
@@ -244,11 +246,11 @@ section {
     width: 34%;
 }
 .stat-bar-inner.interviews {
-    background: #4ecdc4;
+    background: #e41903;
     width: 7%;
 }
-.stat-bar-inner.revisions {
-    background: #ff6b6b;
+.stat-bar-inner.accpeted {
+    background: #0ba409;
     width: 4%;
 }
 
